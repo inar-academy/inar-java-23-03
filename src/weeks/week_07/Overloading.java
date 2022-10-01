@@ -9,6 +9,9 @@ public class Overloading {
         int a = 20;
         doubleTheNume(a);
         System.out.println(a);
+        //Overloading vs Overriding
+        Math.max(3,5);
+        Math.max(3.0,5.0);
 
         String s = "tarik";
         changeCharacter(s);
