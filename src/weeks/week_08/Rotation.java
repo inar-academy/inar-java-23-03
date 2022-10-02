@@ -44,11 +44,13 @@ public class Rotation {
     public static String rotation(String s1, int i){
         String s3 = "";//InarAcademy   4
         for (int j = i; j < s1.length() ; j++) {
-            s3 += s1.charAt(i);//Academy
+            s3 += s1.charAt(j);//Academy
         }
         for (int j = 0; j < i ; j++) {
-            s3 += s1.charAt(i); //AcademyInar
+            s3 += s1.charAt(j); //AcademyInar
         }
+        //The below print is for debugging purposes
+        //System.out.println(s3);
         return s3;
     }
 }
