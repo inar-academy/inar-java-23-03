@@ -1,4 +1,4 @@
-package weeks.week_09;
+package weeks.week_09.binarySearch;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -20,7 +20,7 @@ public class BinarySearch {
 
     }
 
-    private static void printArr(int[] arr) {
+    public static void printArr(int[] arr) {
         System.out.print("[");
         for (int i = 0; i <arr.length ; i++) {
             System.out.printf("(%d) %d, ", i,arr[i]);
@@ -63,14 +63,14 @@ public class BinarySearch {
         return -1;
     }
 
-    private static void fillArrWithLinearValues(int[] arr, int start, int end) {
+    public static void fillArrWithLinearValues(int[] arr, int start, int end) {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = start + i;
         }
 
     }
 
-    private static int getTheIndex(int[] arr, int num) {
+    public static int getTheIndex(int[] arr, int num) {
         for (int i = 0; i < arr.length; i++) {
             if(arr[i] == num){
                 return i;
@@ -79,10 +79,12 @@ public class BinarySearch {
         return -1;
     }
 
-    private static void fillArrWithRandomValues(int[] arr, int start, int limit) {
+    public static void fillArrWithRandomValues(int[] arr, int start, int limit) {
         for (int i = 0; i < arr.length; i++) {
             int num = start + (int)(Math.random()* (limit -start));
             arr[i] = num;
         }
     }
+
+    public void nonStaticMethod(){}
 }
