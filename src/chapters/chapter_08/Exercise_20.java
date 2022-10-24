@@ -54,17 +54,20 @@ public class Exercise_20 {
     private static int[][] board = new int[row][col];
     private static boolean isRedTurn = true;
 
-    //https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
+    //Coloring the disks - https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
     public static final String ANSI_YELLOW = "\u001B[33m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_RESET = "\u001B[0m";
 
 
     public static void main(String[] args) {
+        display1();
         do {
+            isRedTurn = !isRedTurn;
             askUserForInput();
             int usersEntry = input.nextInt();
             if (!isValid(usersEntry)) {
+                isRedTurn = !isRedTurn;
                 System.out.println("Invalid entry!");
                 continue;
             }
@@ -82,22 +85,23 @@ public class Exercise_20 {
             System.out.println("Game is over! It's a DRAW!!");
             return true;
         } else {//keep playing
-            isRedTurn = !isRedTurn;
             return false;
         }
     }
 
     private static boolean sameRow() {
         int num = isRedTurn ? 1 : 2;
-        int counter = 0;
+
         for (int i = 0; i < row; i++) {
+            int counter = 0;
             for (int j = 0; j < col; j++) {
                 if (board[i][j] == num) {
                     counter++;
                 } else {
                     counter = 0;
                 }
-                if (counter == 4) {
+                if (counter >= 4) {
+                    System.out.printf("SAME ROW!!!");
                     return true;
                 }
             }
@@ -107,15 +111,17 @@ public class Exercise_20 {
 
     private static boolean sameCol() {
         int num = isRedTurn ? 1 : 2;
-        int counter = 0;
+
         for (int i = 0; i < col; i++) {
+            int counter = 0;
             for (int j = 0; j < row; j++) {
                 if (board[j][i] == num) {
                     counter++;
                 } else {
                     counter = 0;
                 }
-                if (counter == 4) {
+                if (counter >= 4) {
+                    System.out.printf("SAME COL!!!");
                     return true;
                 }
             }
@@ -136,6 +142,7 @@ public class Exercise_20 {
                         break;
                     }
                     if (counter == 4) {
+                        System.out.printf("RIGHT DIAGONAL!!");
                         return true;
                     }
                 }
@@ -157,6 +164,7 @@ public class Exercise_20 {
                         break;
                     }
                     if (counter == 4) {
+                        System.out.printf("LEFT DIAGONAL!!!");
                         return true;
                     }
                 }
@@ -206,6 +214,8 @@ public class Exercise_20 {
             }
             System.out.println("|");
         }
+        System.out.println("-----------------------------");
+        System.out.printf("|%2d |%2d |%2d |%2d |%2d |%2d |%2d |",0,1,2,3,4,5,6);
         System.out.println("\n");
     }
 
