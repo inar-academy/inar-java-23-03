@@ -6,7 +6,7 @@ import java.io.*;
 public class Exercise_20 {
     /**
      * @Author Inar Academy
-     *
+     * <p>
      * * 1 - Anlat
      * * 2 - Ornekle
      * * 3 - Algoritmani sozel
@@ -125,14 +125,15 @@ public class Exercise_20 {
 
     private static boolean rightDiagonal() {
         int num = isRedTurn ? 1 : 2;
-        int counter = 0;
+
         for (int i = 0; i < row - 3; i++) {
             for (int j = 0; j < col - 3; j++) {
+                int counter = 0;
                 for (int k = 0; k < 4; k++) {
                     if (board[i + k][j + k] == num) {
                         counter++;
                     } else {
-                        counter = 0;
+                        break;
                     }
                     if (counter == 4) {
                         return true;
