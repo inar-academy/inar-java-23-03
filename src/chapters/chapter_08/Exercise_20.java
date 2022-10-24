@@ -145,14 +145,15 @@ public class Exercise_20 {
 
     private static boolean leftDiagonal() {
         int num = isRedTurn ? 1 : 2;
-        int counter = 0;
+
         for (int i = 0; i < row - 3; i++) {
             for (int j = 3; j < col; j++) {
+                int counter = 0;
                 for (int k = 0; k < 4; k++) {
                     if (board[i + k][j - k] == num) {
                         counter++;
                     } else {
-                        counter = 0;
+                        break;
                     }
                     if (counter == 4) {
                         return true;
