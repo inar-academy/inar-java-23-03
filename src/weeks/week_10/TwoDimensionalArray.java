@@ -1,5 +1,7 @@
 package weeks.week_10;
 
+import weeks.week_12.Student;
+
 import java.util.Scanner;
 
 public class TwoDimensionalArray {
@@ -16,6 +18,10 @@ public class TwoDimensionalArray {
         bArr[0] = new int[3];
         bArr[1] = new int[7];
         printArr(bArr);
+
+
+        Student tarik = new Student();
+//        System.out.println(tarik.protectedAccessModifier);
 
     }
 
