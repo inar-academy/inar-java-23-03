@@ -22,7 +22,6 @@ public class Circle {
         color = "RED";
         radius = 2;
         isFilled = false;
-
     }
 
     public Circle(double r) {

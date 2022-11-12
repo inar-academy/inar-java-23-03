@@ -6,7 +6,7 @@ public class Player {
     private long fee;
 
     public Player(){
-        this("default",0);
+        this("",0);
     }
 
     public Player(String name, long fee) {
